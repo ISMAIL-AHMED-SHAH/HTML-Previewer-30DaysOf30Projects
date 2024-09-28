@@ -68,6 +68,10 @@ export default function HTMLPreviewComponent() {
           </div>
         </div>
       </div>
+            {/* Footer section */}
+            <footer className="mt-4 text-sm text-muted-foreground">
+        Created By Ismail Ahmed Shah
+      </footer>
     </div>
   );
 }

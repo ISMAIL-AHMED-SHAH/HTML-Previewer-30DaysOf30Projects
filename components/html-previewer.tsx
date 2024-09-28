@@ -1,37 +1,30 @@
-"use client"; // Enables client-side rendering for this component
+"use client"; 
 
-// Import necessary hooks from React
 import React, { useState, ChangeEvent } from "react";
 
-// Import custom UI components from the UI directory
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
-// Import predefined HTML content
 import { predefinedHtml } from "./predefinedHtml";
 
-// Default export of the HTMLPreviewComponent function
 export default function HTMLPreviewComponent() {
-  // State hooks for managing HTML code input and preview
+
   const [htmlCode, setHtmlCode] = useState<string>("");
   const [previewHtml, setPreviewHtml] = useState<string>("");
 
-  // Handler to generate HTML preview
   const handlePreview = (): void => {
     setPreviewHtml(htmlCode);
   };
 
-  // Handler to paste predefined HTML into the textarea
+
   const handlePasteHtml = (): void => {
     setHtmlCode(predefinedHtml);
   };
 
-  // Handler for updating HTML code state on textarea change
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>): void => {
     setHtmlCode(e.target.value);
   };
 
-  // JSX return statement rendering the HTML previewer UI
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
       {/* HTML Previewer Card */}
